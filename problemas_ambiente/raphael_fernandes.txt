@@ -1,0 +1,11 @@
+Status:OK
+
+Emulador:
+Funcionando normalmente sem problemas.
+
+Celular: 
+Tive um problema a principio, pois meu celular é um xiaomi,
+mas resolvi o problema desativando a "otimização MIUI".
+
+Expo:
+Não tentei visto que já tinha conseguido pelo Emulador e Celular.
