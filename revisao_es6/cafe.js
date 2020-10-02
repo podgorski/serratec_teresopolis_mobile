@@ -16,5 +16,5 @@ const amigos_do_cafe = [
   { nome: 'antonio', tipo: 'cafe_forte' },
   { nome: 'diego', tipo: 'cafe_normal' },
   { nome: 'fernanda', tipo: 'cafe_fraco' },
-  { nome: 'fernanda', tipo: 'cafe_normal' }
+  { nome: 'juliana', tipo: 'cafe_normal' }
 ]
