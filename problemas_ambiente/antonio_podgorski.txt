@@ -1,0 +1,7 @@
+status:ok
+
+emulador
+não consegui instalar pois minha maquina trava
+
+expo
+consigui pbaixar o app, porém não carrega
