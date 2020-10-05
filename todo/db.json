@@ -1,0 +1,19 @@
+{
+  "tarefas": [
+    {
+      "id": 1,
+      "descricao": "Fazer Café",
+      "concluido": false
+    },
+    {
+      "id": 2,
+      "descricao": "Fazer Intervalo",
+      "concluido": true
+    },
+    {
+      "id": 3,
+      "descricao": "Ir almoçar",
+      "concluido": true
+    }
+  ]
+}
