@@ -13,17 +13,7 @@
     {
       "id": 3,
       "descricao": "Ir almoçar",
-      "concluido": true
-    },
-    {
-      "descricao": "Teste",
-      "concluido": false,
-      "id": 4
-    },
-    {
-      "descricao": "Teste 50",
-      "concluido": false,
-      "id": 5
+      "concluido": false
     }
   ]
 }

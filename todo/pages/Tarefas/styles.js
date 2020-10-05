@@ -8,8 +8,22 @@ export const Container = styled.View`
   padding:0 20px;
 `;
 
-export const Task = styled.Text`
-  font-size:20px;
+
+export const TaskContainer = styled.View`
+  flex-direction:row;
+  justify-content:space-between;
+  background-color: ${props => props.finalizado ? "#f9f9f9" : "#e6e6e6"};
+  padding:15px 20px;
+  margin:10px;
+  border-radius:5px;
+`;
+
+export const Task = styled.View`
+  flex:1;
+`;
+
+export const TaskActions = styled.View`
+  flex-direction:row;
 `;
 
 export const FormEnviar = styled.View`

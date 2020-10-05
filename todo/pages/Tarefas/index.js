@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View } from 'react-native';
 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 import {
   Container,
   Task,
+  TaskContainer,
+  TaskActions,
   Input,
   Button,
   TextButton,
@@ -45,12 +49,30 @@ const Tarefas = () => {
 
   }
 
-  const handleTasks = () => {
+  const handleTasks = async (task) => {
 
+    const params = {
+      ...task,
+      concluido: !task.concluido
+    }
+
+    try {
+      await api.put(`tarefas/${task.id}`, params);
+      loadTasks();
+    } catch (err) {
+
+    }
   }
 
-  const handleRemoveTask = () => {
+  const handleRemoveTask = async ({ id }) => {
 
+    try {
+      await api.delete(`tarefas/${id}`);
+      loadTasks();
+    } catch (err) {
+      console.warn("erro ao deletar tarefa")
+    }
+    // console.warn(`delete ${id}`)
   }
 
   useEffect(() => {
@@ -74,7 +96,31 @@ const Tarefas = () => {
       </FormEnviar>
 
       {tasks.map(task => (
-        <Task key={task.id}>{task.descricao}</Task>
+        <TaskContainer key={task.id} finalizado={task.concluido}>
+          <Task >
+            <Text>{task.descricao}</Text>
+          </Task>
+          <TaskActions>
+
+            <MaterialCommunityIcons
+              name="delete-outline"
+              color="#333"
+              size={32}
+              onPress={() => { handleRemoveTask(task) }}
+            />
+
+            <MaterialCommunityIcons
+              name={task.concluido ? "check-circle-outline" : "circle-outline"}
+              color={task.concluido ? "#04d361" : "#333"}
+              size={32}
+              onPress={() => { handleTasks(task) }}
+            />
+
+
+
+          </TaskActions>
+        </TaskContainer>
+
       )
       )}
     </Container>
