@@ -9,61 +9,6 @@
       "id": 2,
       "descricao": "Fazer Intervalo",
       "concluido": true
-    },
-    {
-      "id": 3,
-      "descricao": "Ir almoçar",
-      "concluido": false
-    },
-    {
-      "descricao": "1",
-      "concluido": false,
-      "id": 4
-    },
-    {
-      "descricao": "2",
-      "concluido": false,
-      "id": 5
-    },
-    {
-      "descricao": "3",
-      "concluido": false,
-      "id": 6
-    },
-    {
-      "descricao": "4",
-      "concluido": false,
-      "id": 7
-    },
-    {
-      "descricao": "5",
-      "concluido": false,
-      "id": 8
-    },
-    {
-      "descricao": "6",
-      "concluido": false,
-      "id": 9
-    },
-    {
-      "descricao": "7",
-      "concluido": false,
-      "id": 10
-    },
-    {
-      "descricao": "8",
-      "concluido": false,
-      "id": 11
-    },
-    {
-      "descricao": "9",
-      "concluido": false,
-      "id": 12
-    },
-    {
-      "descricao": "10",
-      "concluido": false,
-      "id": 13
     }
   ]
 }

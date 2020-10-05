@@ -24,6 +24,7 @@ const Tarefas = () => {
   const [newTask, setNewTask] = useState("");
 
   const loadTasks = async () => {
+
     try {
       const response = await api.get("tarefas");
       // console.warn(response.data);
@@ -77,9 +78,16 @@ const Tarefas = () => {
     // console.warn(`delete ${id}`)
   }
 
+  //Apenas será executado uma única vez!
   useEffect(() => {
     loadTasks();
   }, [])
+
+  //Aerá executado toda vez que NewTask sofrer alterações
+  //apenas um exemplo, sem relação com a solução atual
+  useEffect(() => {
+    // console.warn(newTask)
+  }, [newTask])
 
 
 

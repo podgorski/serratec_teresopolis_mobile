@@ -4,7 +4,6 @@ export const Container = styled.View`
   background-color:#fff;
   flex:1;
   /* justify-content:center; */
-
   padding:0 20px;
 `;
 
