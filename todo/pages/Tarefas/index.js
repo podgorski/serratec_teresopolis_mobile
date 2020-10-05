@@ -11,7 +11,9 @@ import {
   Input,
   Button,
   TextButton,
-  FormEnviar
+  FormEnviar,
+  Tasks,
+  TaskText
 } from './styles'
 
 import api from '../../services/api';
@@ -95,34 +97,35 @@ const Tarefas = () => {
         </Button>
       </FormEnviar>
 
-      {tasks.map(task => (
-        <TaskContainer key={task.id} finalizado={task.concluido}>
-          <Task >
-            <Text>{task.descricao}</Text>
-          </Task>
-          <TaskActions>
-
-            <MaterialCommunityIcons
-              name="delete-outline"
-              color="#333"
-              size={32}
-              onPress={() => { handleRemoveTask(task) }}
-            />
-
-            <MaterialCommunityIcons
-              name={task.concluido ? "check-circle-outline" : "circle-outline"}
-              color={task.concluido ? "#04d361" : "#333"}
-              size={32}
-              onPress={() => { handleTasks(task) }}
-            />
+      <Tasks showsVerticalScrollIndicator={false}>
 
 
+        {tasks.map(task => (
+          <TaskContainer key={task.id} finalizado={task.concluido}>
+            <Task >
+              <TaskText>{task.descricao}</TaskText>
+            </Task>
+            <TaskActions>
 
-          </TaskActions>
-        </TaskContainer>
+              <MaterialCommunityIcons
+                name="delete-outline"
+                color="#333"
+                size={32}
+                onPress={() => { handleRemoveTask(task) }}
+              />
 
-      )
-      )}
+              <MaterialCommunityIcons
+                name={task.concluido ? "check-circle-outline" : "circle-outline"}
+                color={task.concluido ? "#04d361" : "#333"}
+                size={32}
+                onPress={() => { handleTasks(task) }}
+              />
+            </TaskActions>
+          </TaskContainer>
+
+        )
+        )}
+      </Tasks>
     </Container>
 
 

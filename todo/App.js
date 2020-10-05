@@ -3,10 +3,12 @@ import React from 'react';
 
 import Tarefas from './pages/Tarefas';
 
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 export default function App() {
   return (
-
-    <Tarefas />
-
+    <SafeAreaView style={{ flex: 1 }}>
+      <Tarefas />
+    </SafeAreaView>
   );
 }

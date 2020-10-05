@@ -3,8 +3,8 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   background-color:#fff;
   flex:1;
-  justify-content:center;
-  align-items:center;
+  /* justify-content:center; */
+
   padding:0 20px;
 `;
 
@@ -14,12 +14,21 @@ export const TaskContainer = styled.View`
   justify-content:space-between;
   background-color: ${props => props.finalizado ? "#f9f9f9" : "#e6e6e6"};
   padding:15px 20px;
-  margin:10px;
+  margin-top:10px;
   border-radius:5px;
+  flex:1;
+`;
+
+export const Tasks = styled.ScrollView`
+
 `;
 
 export const Task = styled.View`
   flex:1;
+`;
+
+export const TaskText = styled.Text`
+  font-size:20px;
 `;
 
 export const TaskActions = styled.View`
