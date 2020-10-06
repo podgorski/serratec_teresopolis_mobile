@@ -12,8 +12,8 @@
     },
     {
       "descricao": "Enviar o tab navigation para o componente routes",
-      "concluido": false,
-      "id": 3
+      "id": 3,
+      "concluido": true
     },
     {
       "descricao": "Criar o auth.routes",
