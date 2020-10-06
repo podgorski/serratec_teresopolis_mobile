@@ -17,8 +17,8 @@
     },
     {
       "descricao": "Criar o auth.routes",
-      "concluido": false,
-      "id": 4
+      "id": 4,
+      "concluido": true
     },
     {
       "descricao": "Criar a tela de login",
@@ -29,11 +29,6 @@
       "descricao": "Criar o dashboard",
       "concluido": false,
       "id": 6
-    },
-    {
-      "descricao": "Criar stock navigation para auth e App routes ",
-      "concluido": false,
-      "id": 7
     }
   ]
 }
