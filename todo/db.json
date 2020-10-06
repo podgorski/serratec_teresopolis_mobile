@@ -29,6 +29,11 @@
       "descricao": "Criar o dashboard",
       "concluido": false,
       "id": 6
+    },
+    {
+      "descricao": "Criar stock navigation para auth e App routes ",
+      "concluido": false,
+      "id": 7
     }
   ]
 }
