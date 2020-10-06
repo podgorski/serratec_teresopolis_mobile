@@ -22,8 +22,8 @@
     },
     {
       "descricao": "Criar a tela de login",
-      "concluido": false,
-      "id": 5
+      "id": 5,
+      "concluido": true
     },
     {
       "descricao": "Criar o dashboard",

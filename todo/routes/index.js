@@ -5,7 +5,7 @@ import AuthRoutes from './auth.routes';
 
 const Routes = () => {
 
-  const user = false;
+  const user = true;
 
   return (
     <NavigationContainer>
