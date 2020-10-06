@@ -1,14 +1,34 @@
 {
   "tarefas": [
     {
+      "descricao": "Explicar react navigation",
       "id": 1,
-      "descricao": "Fazer Café",
-      "concluido": false
+      "concluido": true
     },
     {
+      "descricao": "Criar o tab navigation",
       "id": 2,
-      "descricao": "Fazer Intervalo",
       "concluido": true
+    },
+    {
+      "descricao": "Enviar o tab navigation para o componente routes",
+      "concluido": false,
+      "id": 3
+    },
+    {
+      "descricao": "Criar o auth.routes",
+      "concluido": false,
+      "id": 4
+    },
+    {
+      "descricao": "Criar a tela de login",
+      "concluido": false,
+      "id": 5
+    },
+    {
+      "descricao": "Criar o dashboard",
+      "concluido": false,
+      "id": 6
     }
   ]
 }

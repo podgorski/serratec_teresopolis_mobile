@@ -37,6 +37,12 @@ const Tarefas = () => {
 
   const handleAddTasks = async () => {
 
+    // if (newTask == "") {
+    if (isEmpty(newTask)) {
+      // if (!(!!newTask)) {
+      console.warn("você deve preencher a tarefa")
+      return
+    }
     const params = {
       descricao: newTask,
       concluido: false
