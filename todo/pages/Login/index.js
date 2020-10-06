@@ -1,8 +1,28 @@
 import React from 'react';
-import { Text } from 'react-native';
+
+import { Image } from 'react-native';
+
+import logoImg from '../../assets/logo.png';
+
+import {
+  Container,
+  Input,
+  Button,
+  ButtonText
+} from './styles'
 
 const Login = () => {
-  return (<Text>Login</Text>)
+  return (
+    <Container>
+      <Image source={logoImg} />
+      <Input />
+      <Input />
+      <Button>
+        <ButtonText>Acessar</ButtonText>
+      </Button>
+    </Container>
+
+  )
 }
 
 export default Login;
