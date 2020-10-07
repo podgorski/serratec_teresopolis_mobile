@@ -102,7 +102,7 @@ const Tarefas = () => {
     <Container>
       <FormEnviar>
         <Input
-          placeholder="Digite a tarefa ..."
+          placeholder="Digitar a tarefa ..."
           onChangeText={(letras) => { setNewTask(letras) }}
           value={newTask}
         />

@@ -1,34 +1,38 @@
 {
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "antonio@domob.me",
+      "password": "123123"
+    }
+  ],
+  "projetos": [
+    {
+      "descricao": "Projeto Final",
+      "id": 1
+    }
+  ],
   "tarefas": [
     {
-      "descricao": "Explicar react navigation",
-      "id": 1,
-      "concluido": true
+      "descricao": "Aprender react",
+      "concluido": true,
+      "projetoId": 1,
+      "usuarioId": 1,
+      "id": 1
     },
     {
-      "descricao": "Criar o tab navigation",
-      "id": 2,
-      "concluido": true
+      "descricao": "Aprender react native",
+      "concluido": true,
+      "projetoId": 1,
+      "usuarioId": 1,
+      "id": 2
     },
     {
-      "descricao": "Enviar o tab navigation para o componente routes",
-      "id": 3,
-      "concluido": true
-    },
-    {
-      "descricao": "Criar o auth.routes",
-      "id": 4,
-      "concluido": true
-    },
-    {
-      "descricao": "Criar a tela de login",
-      "id": 5,
-      "concluido": true
-    },
-    {
-      "descricao": "Criar o dashboard",
-      "concluido": false,
-      "id": 6
+      "descricao": "Aprender css",
+      "concluido": true,
+      "projetoId": 1,
+      "usuarioId": 1,
+      "id": 3
     }
   ]
 }
