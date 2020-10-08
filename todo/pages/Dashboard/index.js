@@ -3,42 +3,28 @@ import { Text } from 'react-native';
 
 import { Container } from './styles'
 
-import ProgressCircle from 'react-native-progress-circle'
+import ProgressCircle from 'react-native-progress-circle';
 
 import api from '../../services/api';
 
-import { useIsFocused } from '@react-navigation/native';
+import { useFocusEffect } from '@react-navigation/native';
 
 const Dashboard = () => {
 
-
-  const [tasks, setTasks] = useState([]);
   const [percentual, setPercentual] = useState(0);
-  const isFocused = useIsFocused();
 
-
-  const loadTasks = async () => {
-
-    try {
-      const response = await api.get("tarefas");
-      // console.warn(response.data);
-      const tks = response.data;
-      setTasks(tks)
-
-      setPercentual(((tks.filter((t) => t.concluido).length / tks.length) * 100))
-
-    } catch (err) {
-      console.warn("Falha ao recuperar as tarefas.")
-    }
-
+  const percentualTarefasRealizadas = async () => {
+    const resultado = await api.get("tarefas");
+    const tarefas = resultado.data
+    const tarefas_realizadas = tarefas.filter(tarefa => tarefa.concluido)
+    const calculo_percentual = (tarefas_realizadas.length / tarefas.length) * 100
+    setPercentual(calculo_percentual)
   }
 
 
-
-  useEffect(() => {
-    loadTasks();
-    // console.warn(tasks.length)
-  }, [isFocused])
+  useFocusEffect(() => {
+    percentualTarefasRealizadas();
+  })
 
   return (
     <Container>
@@ -53,8 +39,6 @@ const Dashboard = () => {
         <Text style={{ fontSize: 25 }}>{`${percentual.toFixed(2)}%`}</Text>
       </ProgressCircle>
     </Container>
-
-
   )
 };
 

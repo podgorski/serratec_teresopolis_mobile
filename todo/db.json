@@ -15,24 +15,22 @@
   "tarefas": [
     {
       "descricao": "Aprender react",
-      "concluido": true,
       "projetoId": 1,
       "usuarioId": 1,
-      "id": 1
-    },
-    {
-      "descricao": "Aprender react native",
-      "concluido": true,
-      "projetoId": 1,
-      "usuarioId": 1,
-      "id": 2
+      "id": 1,
+      "concluido": true
     },
     {
       "descricao": "Aprender css",
-      "concluido": true,
       "projetoId": 1,
       "usuarioId": 1,
-      "id": 3
+      "id": 3,
+      "concluido": true
+    },
+    {
+      "descricao": "Nova terefa",
+      "id": 4,
+      "concluido": false
     }
   ]
 }
