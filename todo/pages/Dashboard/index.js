@@ -8,7 +8,7 @@ import ProgressCircle from 'react-native-progress-circle';
 import api from '../../services/api';
 
 import { useIsFocused } from '@react-navigation/native';
-
+// import { useFocusEffect } from '@react-navigation/native';
 
 
 
@@ -34,6 +34,7 @@ const Dashboard = () => {
   //   percentualTarefasRealizadas();
   // }
 
+  // useFocusEffect(percentualTarefasRealizadas())
 
   useEffect(() => {
     if (focoPagina) {
