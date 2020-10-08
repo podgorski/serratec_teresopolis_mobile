@@ -6,6 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Routes from './routes'
 
+import { UsuarioProvider } from './contexts/user'
 
 
 
@@ -13,7 +14,9 @@ import Routes from './routes'
 export default function App() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <Routes />
+      <UsuarioProvider>
+        <Routes />
+      </UsuarioProvider>
     </SafeAreaView>
   );
 }

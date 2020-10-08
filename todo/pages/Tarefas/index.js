@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Text, View } from 'react-native';
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -18,7 +18,12 @@ import {
 
 import api from '../../services/api';
 
+import { UsuarioContext } from '../../contexts/user';
+
 const Tarefas = () => {
+
+  const usuario = useContext(UsuarioContext);
+  console.warn(usuario);
 
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
