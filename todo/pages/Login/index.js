@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import { Image, ActivityIndicator } from 'react-native';
 
@@ -11,14 +11,26 @@ import {
   ButtonText
 } from './styles'
 
+import { UsuarioContext } from '../../contexts/user';
+
 const Login = () => {
+
+  const { signIn } = useContext(UsuarioContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [carregando, setCarregando] = useState(false);
 
-  function handleSubmit() {
+  async function handleSubmit() {
     setCarregando(true)
+
+    try {
+      await signIn(email, password)
+    } catch (err) {
+      // console.warn('erro ao realizar a requisição')
+    } finally {
+      setCarregando(false)
+    }
 
     // Auth
 
