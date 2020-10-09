@@ -1,7 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Text } from 'react-native';
 
-import { Container } from './styles'
+import {
+  Container,
+  Button,
+  ButtonText,
+  Titulo,
+  SubTitulo
+} from './styles'
 
 import ProgressCircle from 'react-native-progress-circle';
 
@@ -10,10 +16,12 @@ import api from '../../services/api';
 import { useIsFocused } from '@react-navigation/native';
 // import { useFocusEffect } from '@react-navigation/native';
 
-
+import { UsuarioContext } from '../../contexts/user';
 
 
 const Dashboard = () => {
+
+  const { signOut, user } = useContext(UsuarioContext)
 
   const focoPagina = useIsFocused();
 
@@ -44,7 +52,11 @@ const Dashboard = () => {
   }, [focoPagina])
 
   return (
+
+
     <Container>
+      <Titulo>{user.nome}</Titulo>
+      <SubTitulo>{user.email}</SubTitulo>
       <ProgressCircle
         percent={percentual}
         radius={100}
@@ -55,7 +67,14 @@ const Dashboard = () => {
       >
         <Text style={{ fontSize: 25 }}>{`${percentual.toFixed(2)}%`}</Text>
       </ProgressCircle>
+      <Button onPress={() => {
+        signOut()
+      }}>
+
+        <ButtonText>Sair</ButtonText>
+      </Button>
     </Container>
+
   )
 };
 
