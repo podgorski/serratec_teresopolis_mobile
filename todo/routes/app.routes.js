@@ -44,6 +44,7 @@ const AppRoutes = () => {
             )
           }
         } />
+
     </Tab.Navigator>
   )
 }

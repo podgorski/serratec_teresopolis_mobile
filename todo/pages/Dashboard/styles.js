@@ -34,5 +34,5 @@ font-weight:bold;
 export const SubTitulo = styled.Text`
 color:#333;
 font-size:13px;
-margin-bottom:15
+margin-bottom:15px;
 `;
