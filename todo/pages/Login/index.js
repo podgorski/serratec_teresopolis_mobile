@@ -15,11 +15,24 @@ import { UsuarioContext } from '../../contexts/user';
 
 const Login = () => {
 
-  const { signIn } = useContext(UsuarioContext);
+  const { signIn, signUp } = useContext(UsuarioContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [carregando, setCarregando] = useState(false);
+
+
+  async function handleJoin() {
+    setCarregando(true)
+
+    try {
+      await signUp(email, password)
+    } catch (err) {
+      // console.warn('erro ao realizar a requisição')
+    } finally {
+      setCarregando(false)
+    }
+  }
 
   async function handleSubmit() {
     setCarregando(true)
@@ -61,6 +74,18 @@ const Login = () => {
 
 
       </Button>
+
+      <Button onPress={handleJoin} disabled={!password || !email}>
+
+        {carregando ?
+          <ActivityIndicator color="#333" />
+          :
+          <ButtonText>Cadastrar</ButtonText>
+        }
+
+
+      </Button>
+
     </Container>
 
   )

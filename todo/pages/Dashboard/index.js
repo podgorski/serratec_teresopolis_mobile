@@ -11,7 +11,11 @@ import {
 
 import ProgressCircle from 'react-native-progress-circle';
 
-import api from '../../services/api';
+// import api from '../../services/api';
+
+
+import firebase from 'firebase';
+import 'firebase/firestore'
 
 import { useIsFocused } from '@react-navigation/native';
 // import { useFocusEffect } from '@react-navigation/native';
@@ -37,6 +41,8 @@ const Dashboard = () => {
     setPercentual(calculo_percentual)
   }
 
+
+
   // Implementação Marcela
   // if (focoPagina) {
   //   percentualTarefasRealizadas();
@@ -44,9 +50,25 @@ const Dashboard = () => {
 
   // useFocusEffect(percentualTarefasRealizadas())
 
+  const listenDashboardTasks = (snap) => {
+    const tarefas = snap.docs
+    const tarefas_realizadas = tarefas.filter((tarefa) => {
+      return tarefa.data().concluido
+    })
+
+    const calculo_percentual = (tarefas_realizadas.length / tarefas.length) * 100
+
+    setPercentual(calculo_percentual)
+  }
+
   useEffect(() => {
     if (focoPagina) {
-      percentualTarefasRealizadas();
+      // percentualTarefasRealizadas();
+
+      const listener = firebase.firestore().collection('tarefas')
+        .onSnapshot(listenDashboardTasks);
+
+      return () => listener();
     }
 
   }, [focoPagina])
